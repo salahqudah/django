@@ -5,5 +5,7 @@ urlpatterns = [
     path('', views.main, name='main'),
     path('members/', views.members, name='members'),  # Remove the 'members/' prefix here
     path('members/details/<int:id>', views.details, name='details'),
-    path('testing/', views.testing, name='testing'),  
+    path('testing/', views.testing, name='testing'),
+    path('orderbyfirst/', views.orderbyfirst, name='orderbyfirst'),  
+    path('descendingby/',views.descendingby,name='descendingby')
 ]

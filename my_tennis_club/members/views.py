@@ -24,11 +24,28 @@ def main(request):
   return HttpResponse(template.render())
 
 def testing(request):
-  mymembers=Member.objects.all().values()
+  mydata=Member.objects.filter(firstname='salah').values()|Member.objects.filter(firstname='Tobias').values()
   template = loader.get_template('template.html')
   context =  {
-    'fruits': ['Apple', 'Banana', 'Cherry', 'Oranges', 'Kiwi'],   
+      'mymembers': mydata,
   }
-
   return HttpResponse(template.render(context, request))
+def orderbyfirst(request):
+  mydata= Member.objects.all().order_by('firstname').values()
+  template = loader.get_template('template.html')
+  context = {
+      'mymembers': mydata,
+  }
+  return HttpResponse(template.render(context,request))
+def descendingby(request):
+  mydata=Member.objects.all().order_by('-firstname').values()
+  template= loader.get_template('template.html')
+  context = {
+    'mymembers':mydata,
+  }
+  return HttpResponse(template.render(context,request))
+
+  
+
+  
 

@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<html>
-<body>
-
-
-<table border='1'>
+<!-- descendingbyfirstname.html -->
+<h2>Members (Sorted by Firstname Descending)</h2>
+<table border="1">
   <tr>
     <th>ID</th>
     <th>Firstname</th>
@@ -15,11 +12,7 @@
       <td>{{ x.firstname }}</td>
       <td>{{ x.lastname }}</td>
     </tr>
+  {% empty %}
+    <tr><td colspan="3">No members found.</td></tr>
   {% endfor %}
 </table>
-
-
-{% include 'descendingbyfirstname.html' %}
-{% include 'orderbyfirst.html' %}
-</body>
-</html>
