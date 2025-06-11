@@ -1,0 +1,15 @@
+<html>
+<head>
+    <title>Book API</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        Title: <input type="text" name="title"><br>
+        Author: <input type="text" name="author"><br>
+        Year: <input type="number" name="published_year"><br>
+        <input type="submit" value="Add Book">
+    </form>
+</body>
+</html>
